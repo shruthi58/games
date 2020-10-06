@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ball.css">
+</head>
+<body>
+       <div id="root">
+        <div id="gameinfo">
+            <pre>Try to shoot the ball into the moving box and score as much as possible 
+within 20 seconds.
+As you succeed the size decreases and speed increases.
+    Do your best!
+    <button id="button">Start game!</button>    </pre> </div>
+
+           <div id="hoverbox"></div>
+           <div id="moving">
+               <div id="slider">
+                   <div id="ball">
+                   </div>
+               </div>
+          </div>
+   </div>
+    <div class="goals">
+        <span id="level" class="stats">Level: 0</span>
+        <span id="point" class="stats">Score: 0</span>
+        <span id="timer" class="stats">Timer: 20s</span>
+        <button id="reset" >Reset</button>
+    </div>
+      <script src="ball2.js"></script>
+</body>
+</html>

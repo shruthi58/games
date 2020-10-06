@@ -1,0 +1,57 @@
+body{
+    background-color: #333;
+}
+#root{
+    height: 400px;
+    width: 800px;
+    background-color: lightgray;
+    border: 3px solid white;
+    margin: auto;
+    text-align: center;   
+}
+#hoverbox{
+    height: 80px;
+    width:  150px;
+    position: absolute;
+    margin-top: 20px;
+    background-color: rgb(151, 192, 90);
+}
+#moving{
+   height: 100px;
+   width: 800px;
+   top: 300px;
+   position: absolute;
+}
+#slider{
+   height: 50px;
+   width:100px;
+   position: absolute;
+   background-color:snow;
+   border-radius: 50%;
+   display:flex ;
+   justify-content: center;
+}
+
+#ball{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color:coral;
+  position: absolute;
+}
+.goals{
+    width: 100%;
+    position: absolute;
+    top:550px ;
+    text-align: center;
+}
+#gameinfo{
+   display: none;
+   font-size: x-large;
+   font-weight: bolder;
+}
+.stats{
+    margin: 20px;
+    font-weight: bold;
+    color: white;
+}
