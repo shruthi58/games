@@ -9,5 +9,5 @@ ball slider game
  a silder with a ball moves as the game starts and using space bar user has to throw ball into a moving basket with 30 seconds. As the user goals the basket moves faster.
 
 shooting game
-As men fall from helicopter, a canon which can move using arrow keys has to be used to shoot the men. Have to shoot as many men as possible within 30 secs! as the ball hits the men, the men disappear. The dimensions of the men and ball are calculated as they cross each other, a hit is detected. 
+As men fall from helicopter, a canon which can move using arrow keys has to be used to shoot the men. Have to shoot as many men as possible using spacebar within 30 secs! as the ball hits the men, the men disappear. The dimensions of the men and ball are calculated and as they cross each other, a hit is detected. 
  
