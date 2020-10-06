@@ -1,13 +1,10 @@
 # games
 rock paper scissors
 basic games to learn javascript.
-My first follow along project i did to learn javascript,an easy rock paper scissors game to get my foot into understanding how to work with javascript.
-follow along using freecodecamp video!
 
-ball slider game
- a basic game that I coded to implement basics of javascript. 
- a silder with a ball moves as the game starts and using space bar user has to throw ball into a moving basket with 30 seconds. As the user goals the basket moves faster.
+I started to learn javascript by making projects. To get an idea as to how to do one, I followed a follow along tutorial and did a easy rock paper scissor game. [in branch rock-paper-scissors]
 
-shooting game
-As men fall from helicopter, a canon which can move using arrow keys has to be used to shoot the men. Have to shoot as many men as possible using spacebar within 30 secs! as the ball hits the men, the men disappear. The dimensions of the men and ball are calculated and as they cross each other, a hit is detected. 
- 
+The next project is a slider ball into a moving basket game. This I did after planning a basic game layout to get a easy grip to code in js and using event listeners. [in branch game1]
+
+The canon ball game shoots men as they fall from helicopter. This gave a good understanding in using vanilla js without any animation to move divs using arrow and space bar keys![in branch canon-game]
+
