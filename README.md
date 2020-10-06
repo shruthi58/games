@@ -1,4 +1,5 @@
 # games
 basic games to learn javascript.
-This a basic game with a slider and ball. user has to throw the ball using space bar into the  moving basket as the silder moves too.
-This game was made to learn how to use different methods and event listeners in javascript.
+This is the first follow along project i did to learn javascript.
+an easy rock paper scissors game to get my foot into understanding how to work with javascript.
+follow along using freecodecamp video!
