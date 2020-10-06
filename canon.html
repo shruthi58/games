@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game2</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #playscreen{
+            background-color:white;
+            height: 600px;
+            width: 800px;
+            position: relative;
+            border: 2px solid black;
+            margin-left: 400px;
+        }
+        #heli{
+            height: 50px;
+            width: 100px;
+            left: 0px;
+            position: relative;
+        }
+        #shooter1{
+            background-color: rgb(41, 39, 39);
+            height: 40px;
+            width: 120px;
+            position: relative;
+            left: 340px;
+            top: 510px;
+        }
+        #shooter2{
+            background-color: rgb(41, 39, 39);
+            height: 100px;
+            width: 60px;
+            position: absolute;
+            left: 370px;
+            top: 480px;
+        }
+        #shooter3{
+            background-color: rgb(41, 39, 39);
+            height: 100px;
+            width: 40px;
+        }
+        #shooter3wrap{
+            height:160px;
+            width:40px;
+            position:absolute;
+            left: 380px;
+            top: 415px;
+        }
+        .shooterwraptoadd{
+            height:160px;
+            width:40px;
+            position: absolute;
+            left: 380px;
+            top: 415px;
+        }
+        .circletoadd{
+            border-radius: 50%;
+            background-color: red;
+            height: 20px;
+            width: 20px;
+            left: 10px;
+            position: absolute;
+        }
+        .peopletoadd{
+            display: inline-block;
+            top: 50px;
+            position:absolute;
+        }
+        #bottomcircle{
+            left: 10px;
+            top: 70px;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            border-radius: 50%;
+            background-color:red;
+        }
+        button{
+            width: 100px;
+            height: 20px;
+        }
+        #rightrotate{
+            position: relative;
+            left: 700px;
+            top: 650px;
+        }
+        #leftrotate{
+            position: relative;
+            left: 720px;
+            top: 650px;
+        }
+        #stop{
+            height: 300px;
+            width: 300px;
+            font-size: 60px;
+            top: 250px;
+            left: 330px;
+            position:absolute;
+            opacity: 0;
+        }
+        #disp{
+            position: absolute;
+            top: 150px;
+            left: 100px;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body onload="shoot(), helimove()">
+    <p id="disp">Lives: <span id="disc">5</span></p>
+    <button id="rightrotate">RIGHT</button>
+    <button id="leftrotate">LEFT</button>
+    <p></p>
+    <div id="playscreen">
+        <div id="stop">GAME OVER</div>
+        <div id="heli"></div>
+        <div id="shooter1"></div>
+        <div id="shooter2"></div>
+        <div id="shooter3wrap">
+            <div id="shooter3">
+                <div id="bottomcircle"></div>
+            </div>
+        </div>
+    </div>
+<script>
+    var shooter3=document.getElementById("shooter3wrap");
+    var leftrotate=document.getElementById("leftrotate");
+    var rightrotate=document.getElementById("rightrotate");
+    var playscreen=document.getElementById("playscreen");
+    var addedwrap=document.getElementsByClassName("shooterwraptoadd");
+    var heli=document.getElementById("heli");
+    var ball=document.getElementsByClassName("circletoadd");
+    var addedpeople=document.getElementsByClassName("peopletoadd");
+    var stop=document.getElementById("stop");
+    var disc=document.getElementById("disc");
+    var timer1,timer2,timer3,timer4,timer5,timer6;
+    var x=0;
+    var y,z;
+    var rightclick;
+    var rect;
+    var bl,br,bt;
+
+    var randoms = [...Array(10)].map(() => Math.floor(Math.random() * 1200));
+    randoms.sort(function(a, b){return a - b});
+    //console.log(randoms);
+
+    leftrotate.addEventListener("click" ,function(){
+            rightclick=false;
+    });
+    rightrotate.addEventListener("click",function(){
+            rightclick=true;
+    });
+    window.addEventListener("keypress",function(){
+        y=event.charCode;
+            if(y==108){
+                rightclick=false;
+            }
+    });
+    window.addEventListener("keypress",function(){
+        y=event.charCode;
+            if(y==107){
+                rightclick=true;
+            }
+    });
+    window.addEventListener("keypress",function(){
+        y=event.charCode;
+        if(y==32){
+            createball();
+        }
+    })
+    timer3=setInterval(move,100);
+    function move(){
+        if(rightclick==true){
+            if(x>=-75){
+                x=x-10
+            }
+        }
+        else{
+            if(x<=75){
+                x=x+10;
+            }
+        }
+        z="rotate" + "(" + x + "deg" + ")";
+        shooter3.style.transform=z;
+    }
+    function createball(){
+        var shooterwraptoadd=document.createElement("div");
+        shooterwraptoadd.className="shooterwraptoadd";
+        var circletoadd=document.createElement("div");
+        circletoadd.className="circletoadd";
+        shooterwraptoadd.appendChild(circletoadd);
+        shooterwraptoadd.style.transform=z;
+        playscreen.appendChild(shooterwraptoadd);
+    }
+    function shoot(){
+        timer4=setInterval(startshoot,100);
+        function startshoot(){
+            for(var i=0;i<ball.length;i++){
+                ball[i].style.top=(ball[i].offsetTop-20)+"px";
+                rect=ball[i].getBoundingClientRect();
+                bl=rect.left;
+                bt=rect.top;
+                br=bl+20;
+                if(bl<400 || bl>1196 || bt<5){
+                    ball[i].remove();
+                    addedwrap[i].remove();
+                }
+            }
+        }
+    }
+    function helimove(){
+        var heli1=document.createElement("img");
+        heli1.setAttribute("src","heli2.jpg");
+        heli1.setAttribute("width", "100");
+        heli1.setAttribute("height", "50");
+        heli.appendChild(heli1);
+        timer5=setInterval(move,10);
+        rightflag=true;
+        function move(){
+            if(rightflag==true){
+                if(heli.offsetLeft<700){
+                heli.style.left=(heli.offsetLeft+1)+"px";
+                 }
+                else{
+                    rightflag=false;
+                    heli1.setAttribute("src","heli1.jpg");
+                }
+            }
+            else{
+                if(heli.offsetLeft>0){
+                    heli.style.left=(heli.offsetLeft-1)+"px";
+                }
+                else{
+                    rightflag=true;
+                    heli1.setAttribute("src","heli2.jpg");
+                }
+            }
+            for(i=0;i<11;i++){
+                if(heli.offsetLeft==randoms[i]){
+                    peoplemove();
+                }
+            }
+        }
+    }
+    var count=5;
+    function peoplemove(){
+        var peopletoadd=document.createElement("img");
+        peopletoadd.className="peopletoadd";
+        peopletoadd.setAttribute("src","man.jpg");
+        peopletoadd.setAttribute("width", "50");
+        peopletoadd.setAttribute("height", "50");
+        peopletoadd.style.left=heli.offsetLeft+"px";
+        playscreen.appendChild(peopletoadd);
+        timer6=setInterval(people,1000);
+        function people(){
+            for(i=0;i<addedpeople.length;i++){
+                addedpeople[i].style.top=(addedpeople[i].offsetTop+1)+"px";
+                let peoarea= addedpeople[i].getBoundingClientRect();
+                if(ball.length>0){
+                    for(var j=0;j<ball.length;j++){
+                        let barea= ball[j].getBoundingClientRect();
+                        if(barea.left<=peoarea.left+50 && barea.left>=peoarea.left){
+                            if(barea.top<=peoarea.top+50 && barea.top>=peoarea.top){
+                                addedpeople[i].remove();
+                                ball[j].remove();
+                            }
+                        }
+                        else if(barea.left+20<=peoarea.left+50 && barea.left+20>=peoarea.left){
+                            if(barea.top<=peoarea.top+50 && barea.top>=peoarea.top){
+                                addedpeople[i].remove();
+                                ball[j].remove();
+                            }
+                        }
+                    }
+                }
+                if(peoarea.top>580){
+                    addedpeople[i].remove();
+                    count--;
+                    console.log(count);
+                    disc.innerHTML=count;
+                    if(count==0){
+                        clearInterval(timer1);
+                        clearInterval(timer2);
+                        clearInterval(timer3);
+                        clearInterval(timer4);
+                        clearInterval(timer5);
+                        clearInterval(timer6);
+                        for(i=0;i<addedpeople.length;i++){
+                            addedpeople[i].style.display="none";
+                        }
+                        stop.style.opacity="1";
+                    }
+                }
+            }
+        }
+    }
+    
+</script>
+</body>
+</html>
