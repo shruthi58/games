@@ -1,8 +1,4 @@
 # games
-rock paper scissors
-basic games to learn javascript.
-My first follow along project i did to learn javascript,an easy rock paper scissors game to get my foot into understanding how to work with javascript.
-follow along using freecodecamp video!
 
 ball slider game
  a basic game that i coded on my for the very first time to implement basics of javascript. 
