@@ -1,5 +1,4 @@
 # games
-rock paper scissors
 basic games to learn javascript.
 
 I started to learn javascript by making projects. To get an idea as to how to do one, I followed a follow along tutorial and did a easy rock paper scissor game. [in branch rock-paper-scissors]
