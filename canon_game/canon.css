@@ -1,0 +1,117 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background-color: #333;
+}
+#root{
+    height: 400px;
+    width: 800px;
+    background-color: #E2F6FF;
+    margin: auto ;
+} 
+
+#img,#addpeople{
+    width: 80px;
+    height: 80px;
+    transform: rotateY(180deg);
+    position: absolute;
+}
+#helipad{
+    width: 800px;
+    height: 80px;
+    background-color: #E2F6FF;
+    position: absolute;
+}
+.screen{
+    width: 80px;
+    height: 80px;
+    top:12px;
+    position: absolute;
+    background-color: transparent;
+}
+#canon{
+    position: absolute;
+    top:350px;
+    height: 50px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    background-color: greenyellow;
+    align-items: center;
+}
+#base{
+      height: 30px;
+      width: 100px;
+      position: absolute;
+      left: 350px;
+      bottom: 15px;
+      background-color: rgb(121, 92, 19);
+}
+
+#middle{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    display: flex;
+    left: 380px;
+    bottom: 35px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(121, 92, 19);
+}
+#rotate{
+    width: 30px ;
+    height:160px;
+    background-color: transparent;
+    position: absolute;
+    top: -85px;
+}
+.bullwrap{
+    width: 30px ;
+    height:10px;
+    position: absolute;
+    background-color: transparent;
+}
+#circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 55px;
+    left: 5px;
+}
+.bullet{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top:-15px;
+}
+#top{
+    height: 80px;
+    width: 30px;
+    position: absolute;
+    background-color: rgb(121, 92, 19);
+}  
+.people{
+    height: 40px;
+    width: 40px;
+    top:50px;
+    position: absolute ;
+}
+#description{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+#score{
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    color: white;
+}
+#hit,#miss{
+    margin-left: 350px;
+}
